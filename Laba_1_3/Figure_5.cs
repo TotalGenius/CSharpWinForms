@@ -14,36 +14,31 @@ namespace Laba_1_3
         {    
         }
 
-        public Point[] figurePart_1 = new Point[3];
-        public Point[] figurePart_2 = new Point[3];
-        public Point[] figurePart_3 = new Point[3];
-        public Point[] figurePart_4 = new Point[3];
+       
+        public Point[] figureParts = new Point[12];
 
         public override void Move(PictureBox pb)
         {
             base.MoveCentralPoint(pb);
+             
+            figureParts[0] = new Point(XPoint, YPoint);
+            figureParts[1] = new Point(XPoint+10, YPoint+30);
+            figureParts[2] = new Point(XPoint- 10, YPoint+30);          
 
-            figurePart_1[0] = new Point(XPoint, YPoint);
-            figurePart_1[1] = new Point(XPoint+10, YPoint+30);
-            figurePart_1[2] = new Point(XPoint- 10, YPoint+30);
-            Trajectory.TrajecGraphic.DrawPolygon(Trajectory.TrajecPen, figurePart_1);
-            
-            figurePart_2[0] = new Point(XPoint, YPoint);
-            figurePart_2[1] = new Point(XPoint+30, YPoint+10);
-            figurePart_2[2] = new Point(XPoint+30, YPoint-10);
-            Trajectory.TrajecGraphic.DrawPolygon(Trajectory.TrajecPen, figurePart_2);
+            figureParts[3] = new Point(XPoint, YPoint);
+            figureParts[4] = new Point(XPoint+30, YPoint+10);
+            figureParts[5] = new Point(XPoint+30, YPoint-10);          
 
-            figurePart_3[0] = new Point(XPoint, YPoint);
-            figurePart_3[1] = new Point(XPoint - 30, YPoint + 10);
-            figurePart_3[2] = new Point(XPoint - 30, YPoint - 10);
-            Trajectory.TrajecGraphic.DrawPolygon(Trajectory.TrajecPen, figurePart_3);
+            figureParts[6] = new Point(XPoint, YPoint);
+            figureParts[7] = new Point(XPoint - 30, YPoint + 10);
+            figureParts[8] = new Point(XPoint - 30, YPoint - 10);          
 
-            figurePart_4[0] = new Point(XPoint, YPoint);
-            figurePart_4[1] = new Point(XPoint + 10, YPoint - 30);
-            figurePart_4[2] = new Point(XPoint - 10, YPoint - 30);
-            Trajectory.TrajecGraphic.DrawPolygon(Trajectory.TrajecPen, figurePart_4);
+            figureParts[9] = new Point(XPoint, YPoint);
+            figureParts[10] = new Point(XPoint + 10, YPoint - 30);
+            figureParts[11] = new Point(XPoint - 10, YPoint - 30);
+                        
+            Trajectory.TrajecGraphic.DrawPolygon(Trajectory.TrajecPen, figureParts);
+          
         }
-
-
     }
 }
