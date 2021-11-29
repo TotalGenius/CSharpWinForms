@@ -82,5 +82,21 @@ namespace Laba_1_3
             figure.FigureSize = changeFigureSize.Value;
             Refresh();
         }
+
+        private void BreathButton_Click(object sender, EventArgs e)
+        {
+            Figure figure = (Figure)movingObj;
+            if (figure.IsBreath == false)
+            {
+                figure.IsBreath= true;
+            }
+            else
+            {
+                figure.IsBreath = false;
+            }
+
+            Refresh();
+
+        }
     }
 }

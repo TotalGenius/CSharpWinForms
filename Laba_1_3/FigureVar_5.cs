@@ -23,58 +23,72 @@ namespace Laba_1_3
         {
             if (breathIn)
             {
-                base.MoveCentralPoint(pb);
-                
-
-                figureParts[0] = new Point(XPoint, YPoint);
-                figureParts[1] = new Point(XPoint + (10 + FigureSize+ BreathSpeed), YPoint + (30 + FigureSize + BreathSpeed));
-                figureParts[2] = new Point(XPoint - (10 + FigureSize + BreathSpeed), YPoint + (30 + FigureSize + BreathSpeed));
-
-                figureParts[3] = new Point(XPoint, YPoint);
-                figureParts[4] = new Point(XPoint + (30 + FigureSize + BreathSpeed), YPoint + (10 + FigureSize + BreathSpeed));
-                figureParts[5] = new Point(XPoint + (30 + FigureSize + BreathSpeed), YPoint - (10 + FigureSize + BreathSpeed));
-
-                figureParts[6] = new Point(XPoint, YPoint);
-                figureParts[7] = new Point(XPoint - (30 + FigureSize + BreathSpeed), YPoint + (10 + FigureSize + BreathSpeed));
-                figureParts[8] = new Point(XPoint - (30 + FigureSize + BreathSpeed), YPoint - (10 + FigureSize + BreathSpeed));
-
-                figureParts[9] = new Point(XPoint, YPoint);
-                figureParts[10] = new Point(XPoint + (10 + FigureSize + BreathSpeed), YPoint - (30 + FigureSize + BreathSpeed));
-                figureParts[11] = new Point(XPoint - (10 + FigureSize + BreathSpeed), YPoint - (30 + FigureSize + BreathSpeed));
-
-                Trajectory.TrajecGraphic.DrawPolygon(Trajectory.TrajecPen, figureParts);
-                counter-=BreathSpeed;
                 if (counter >= BreathSize)
                 {
                     breathIn = false;
                     breathOut = true;
+                    //counter += BreathSize;
+                    BreathStep= FigureSize+ BreathSize;
+
                 }
-            } else if (breathOut)
-            {
+
+                base.MoveCentralPoint(pb);
+
+                
                 figureParts[0] = new Point(XPoint, YPoint);
-                figureParts[1] = new Point(XPoint + (10 + FigureSize - BreathSpeed), YPoint + (30 + FigureSize - BreathSpeed));
-                figureParts[2] = new Point(XPoint - (10 + FigureSize - BreathSpeed), YPoint + (30 + FigureSize - BreathSpeed));
+                figureParts[1] = new Point(XPoint + (10 + FigureSize+counter), YPoint + (30 + FigureSize + counter));
+                figureParts[2] = new Point(XPoint - (10 + FigureSize+ counter), YPoint + (30 + FigureSize+ counter));
 
                 figureParts[3] = new Point(XPoint, YPoint);
-                figureParts[4] = new Point(XPoint + (30 + FigureSize - BreathSpeed), YPoint + (10 + FigureSize - BreathSpeed));
-                figureParts[5] = new Point(XPoint + (30 + FigureSize - BreathSpeed), YPoint - (10 + FigureSize - BreathSpeed));
+                figureParts[4] = new Point(XPoint + (30 + FigureSize + counter), YPoint + (10 + FigureSize + counter));
+                figureParts[5] = new Point(XPoint + (30 + FigureSize + counter), YPoint - (10 + FigureSize + counter));
 
                 figureParts[6] = new Point(XPoint, YPoint);
-                figureParts[7] = new Point(XPoint - (30 + FigureSize -BreathSpeed), YPoint + (10 + FigureSize - BreathSpeed));
-                figureParts[8] = new Point(XPoint - (30 + FigureSize - BreathSpeed), YPoint - (10 + FigureSize - BreathSpeed));
+                figureParts[7] = new Point(XPoint - (30 + FigureSize + counter), YPoint + (10 + FigureSize + counter));
+                figureParts[8] = new Point(XPoint - (30 + FigureSize + counter), YPoint - (10 + FigureSize + counter));
 
                 figureParts[9] = new Point(XPoint, YPoint);
-                figureParts[10] = new Point(XPoint + (10 + FigureSize - BreathSpeed), YPoint - (30 + FigureSize - BreathSpeed));
-                figureParts[11] = new Point(XPoint - (10 + FigureSize - BreathSpeed), YPoint - (30 + FigureSize - BreathSpeed));
+                figureParts[10] = new Point(XPoint + (10 + FigureSize + counter), YPoint - (30 + FigureSize + counter));
+                figureParts[11] = new Point(XPoint - (10 + FigureSize + counter), YPoint - (30 + FigureSize + counter));
 
                 Trajectory.TrajecGraphic.DrawPolygon(Trajectory.TrajecPen, figureParts);
-                counter -=BreathSpeed;
+                counter+=BreathSpeed;
+                
+            } 
+            else
+            {
                 if (counter <= 0)
                 {
                     breathIn = true;
                     breathOut = false;
-
+                    //counter =0;
+                    BreathStep = 0;
                 }
+
+                base.MoveCentralPoint(pb);
+
+                figureParts[0] = new Point(XPoint, YPoint);
+                BreathStep -= BreathSpeed;
+                figureParts[0] = new Point(XPoint, YPoint);
+                figureParts[1] = new Point(XPoint + (10 + BreathStep), YPoint + (30 + BreathStep));
+                figureParts[2] = new Point(XPoint - (10 + BreathStep), YPoint + (30 + BreathStep));
+
+                figureParts[3] = new Point(XPoint, YPoint);
+                figureParts[4] = new Point(XPoint + (30 + BreathStep), YPoint + (10 + BreathStep));
+                figureParts[5] = new Point(XPoint + (30 + BreathStep), YPoint - (10 + BreathStep));
+
+                figureParts[6] = new Point(XPoint, YPoint);
+                figureParts[7] = new Point(XPoint - (30 + BreathStep), YPoint + (10 + BreathStep));
+                figureParts[8] = new Point(XPoint - (30 + BreathStep), YPoint - (10 + BreathStep));
+
+                figureParts[9] = new Point(XPoint, YPoint);
+                figureParts[10] = new Point(XPoint + (10 + BreathStep), YPoint - (30 + BreathStep));
+                figureParts[11] = new Point(XPoint - (10 + BreathStep), YPoint - (30 + BreathStep));
+
+                Trajectory.TrajecGraphic.DrawPolygon(Trajectory.TrajecPen, figureParts);
+
+                counter -=BreathSpeed;
+                
             }
             
         }

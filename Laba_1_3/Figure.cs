@@ -22,6 +22,7 @@ namespace Laba_1_3
         protected int counter;
         protected bool breathIn=true;
         protected bool breathOut = false;
+        protected int BreathStep;
         
         public int FigureSize { get; set; }
 
