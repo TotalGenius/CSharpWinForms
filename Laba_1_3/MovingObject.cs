@@ -19,30 +19,35 @@ namespace Laba_1_3
         }
 
         public Trajectory Trajectory { get; set; }
+
+        //Свойства и переменные для движущейся центральной точки
         public int XPoint { get; set; }
         public int YPoint { get; set; }
         private int i = 0;
-        private int speed = 1;
-        public int Speed
+        private int centralPointMovaingSpeed = 1;
+        public int CentralPointMovingSpeed
         {
-            get { return speed; }
-            set { speed = value; }
+            get { return centralPointMovaingSpeed; }
+            set { centralPointMovaingSpeed = value; }
         }
-        private bool indicator = false;
+        private bool isEndOfRoad = false;
+        //
+
+
 
         /*
          * Реализация движения точки по траектории 
          * (точка в дальнейшем становится центром фигуры).
-         * Движения проиходит туда-обратно
+         * Движения происходит туда-обратно
          */
         protected void MoveCentralPoint(PictureBox pb)
         {
             Trajectory.Draw(pb);
-            if (indicator)
+            if (isEndOfRoad)
             {
                 if (i>= Trajectory.TrajecPoints.Length - 1 )
                 {
-                    indicator = false;
+                    isEndOfRoad = false;
                 }
                 else
                 {
@@ -55,14 +60,14 @@ namespace Laba_1_3
                     //
                     XPoint = Trajectory.TrajecPoints[i].X;
                     YPoint = Trajectory.TrajecPoints[i].Y;
-                    i=i+speed;
+                    i=i+centralPointMovaingSpeed;
                 }
             }
             else
             {
                 if (i == 0 || i<0)
                 {
-                    indicator = true;
+                    isEndOfRoad = true;
                 }
                 else
                 {
@@ -76,7 +81,7 @@ namespace Laba_1_3
 
                     XPoint = Trajectory.TrajecPoints[i].X;
                     YPoint = Trajectory.TrajecPoints[i].Y;
-                    i=i-speed;
+                    i=i-centralPointMovaingSpeed;
                 }
             }            
         }

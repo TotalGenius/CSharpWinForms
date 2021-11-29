@@ -73,7 +73,7 @@ namespace Laba_1_3
 
         private void ChangeFigureSpeed(object sender, EventArgs e)
         {
-            movingObj.Speed = FigureSpeedMovement.Value;
+            movingObj.CentralPointMovingSpeed = FigureSpeedMovement.Value;
         }
     }
 }
