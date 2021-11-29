@@ -32,18 +32,21 @@ namespace Laba_1_3
             this.components = new System.ComponentModel.Container();
             this.pBox = new System.Windows.Forms.PictureBox();
             this.panel = new System.Windows.Forms.Panel();
+            this.FigureSpeedMovement = new System.Windows.Forms.TrackBar();
+            this.label3 = new System.Windows.Forms.Label();
             this.PointMoveStop = new System.Windows.Forms.Button();
             this.MoveStart = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.changeTrajecSizeTBar = new System.Windows.Forms.TrackBar();
             this.label = new System.Windows.Forms.Label();
             this.Timer = new System.Windows.Forms.Timer(this.components);
-            this.label3 = new System.Windows.Forms.Label();
-            this.FigureSpeedMovement = new System.Windows.Forms.TrackBar();
+            this.changeFigureSize = new System.Windows.Forms.TrackBar();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pBox)).BeginInit();
             this.panel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.changeTrajecSizeTBar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.FigureSpeedMovement)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.changeTrajecSizeTBar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.changeFigureSize)).BeginInit();
             this.SuspendLayout();
             // 
             // pBox
@@ -58,6 +61,8 @@ namespace Laba_1_3
             // 
             // panel
             // 
+            this.panel.Controls.Add(this.label4);
+            this.panel.Controls.Add(this.changeFigureSize);
             this.panel.Controls.Add(this.FigureSpeedMovement);
             this.panel.Controls.Add(this.label3);
             this.panel.Controls.Add(this.PointMoveStop);
@@ -69,6 +74,26 @@ namespace Laba_1_3
             this.panel.Name = "panel";
             this.panel.Size = new System.Drawing.Size(234, 428);
             this.panel.TabIndex = 1;
+            // 
+            // FigureSpeedMovement
+            // 
+            this.FigureSpeedMovement.Location = new System.Drawing.Point(39, 174);
+            this.FigureSpeedMovement.Maximum = 5;
+            this.FigureSpeedMovement.Minimum = 1;
+            this.FigureSpeedMovement.Name = "FigureSpeedMovement";
+            this.FigureSpeedMovement.Size = new System.Drawing.Size(142, 45);
+            this.FigureSpeedMovement.TabIndex = 6;
+            this.FigureSpeedMovement.Value = 2;
+            this.FigureSpeedMovement.ValueChanged += new System.EventHandler(this.ChangeFigureSpeed);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(53, 155);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(107, 15);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Speed of the figure";
             // 
             // PointMoveStop
             // 
@@ -124,25 +149,23 @@ namespace Laba_1_3
             this.Timer.Interval = 50;
             this.Timer.Tick += new System.EventHandler(this.TimerTick);
             // 
-            // label3
+            // changeFigureSize
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(53, 155);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(107, 15);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Speed of the figure";
+            this.changeFigureSize.Location = new System.Drawing.Point(3, 250);
+            this.changeFigureSize.Maximum = 50;
+            this.changeFigureSize.Name = "changeFigureSize";
+            this.changeFigureSize.Size = new System.Drawing.Size(225, 45);
+            this.changeFigureSize.TabIndex = 7;
+            this.changeFigureSize.Scroll += new System.EventHandler(this.ChangeFigureSize);
             // 
-            // FigureSpeedMovement
+            // label4
             // 
-            this.FigureSpeedMovement.Location = new System.Drawing.Point(39, 174);
-            this.FigureSpeedMovement.Maximum = 5;
-            this.FigureSpeedMovement.Minimum = 1;
-            this.FigureSpeedMovement.Name = "FigureSpeedMovement";
-            this.FigureSpeedMovement.Size = new System.Drawing.Size(142, 45);
-            this.FigureSpeedMovement.TabIndex = 6;
-            this.FigureSpeedMovement.Value = 2;
-            this.FigureSpeedMovement.ValueChanged += new System.EventHandler(this.ChangeFigureSpeed);
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(59, 232);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(101, 15);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "ChangeFigureSize";
             // 
             // MainForm
             // 
@@ -157,8 +180,9 @@ namespace Laba_1_3
             ((System.ComponentModel.ISupportInitialize)(this.pBox)).EndInit();
             this.panel.ResumeLayout(false);
             this.panel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.changeTrajecSizeTBar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.FigureSpeedMovement)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.changeTrajecSizeTBar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.changeFigureSize)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -175,6 +199,8 @@ namespace Laba_1_3
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TrackBar FigureSpeedMovement;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TrackBar changeFigureSize;
     }
 }
 

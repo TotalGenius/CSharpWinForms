@@ -19,7 +19,7 @@ namespace Laba_1_3
 
         
         static Trajectory trajectory = new Ellipse();
-        MovingObject movingObj = new Figure_5(trajectory);
+        MovingObject movingObj = new FigureVar_5(trajectory);
     
 
         private void pBoxPaint(object sender, PaintEventArgs e)
@@ -74,6 +74,13 @@ namespace Laba_1_3
         private void ChangeFigureSpeed(object sender, EventArgs e)
         {
             movingObj.CentralPointMovingSpeed = FigureSpeedMovement.Value;
+        }
+
+        private void ChangeFigureSize(object sender, EventArgs e)
+        {
+            Figure figure = (Figure)movingObj;
+            figure.FigureSize = changeFigureSize.Value;
+            Refresh();
         }
     }
 }
