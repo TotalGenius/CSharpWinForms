@@ -28,7 +28,7 @@ namespace Laba_1_3
         {
             //Задаем рамеры picture box и отрисовываем траеторию
             pBox.Height = ClientSize.Height;
-            pBox.Width = (int)(ClientSize.Width*0.75);
+            pBox.Width = (int)(ClientSize.Width*0.5);
             trajectory.Draw(pBox);    
         }
 
@@ -98,6 +98,22 @@ namespace Laba_1_3
             }
 
             Refresh();
+
+        }
+
+        private void ChangeBreathSpeed(object sender, EventArgs e)
+        {
+            Figure figure = (Figure)movingObj;
+            figure.BreathSpeed = breathSpeed.Value;
+            
+        }
+
+        private void ChangeBreathSize(object sender, EventArgs e)
+        {
+            Figure figure = (Figure)movingObj;
+            figure.BreathSize = breathSize.Value;
+           
+            
 
         }
     }

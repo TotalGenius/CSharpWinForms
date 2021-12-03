@@ -32,6 +32,11 @@ namespace Laba_1_3
             this.components = new System.ComponentModel.Container();
             this.pBox = new System.Windows.Forms.PictureBox();
             this.panel = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.breathSize = new System.Windows.Forms.TrackBar();
+            this.label5 = new System.Windows.Forms.Label();
+            this.breathSpeed = new System.Windows.Forms.TrackBar();
+            this.BreathButton = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.changeFigureSize = new System.Windows.Forms.TrackBar();
             this.FigureSpeedMovement = new System.Windows.Forms.TrackBar();
@@ -42,9 +47,10 @@ namespace Laba_1_3
             this.changeTrajecSizeTBar = new System.Windows.Forms.TrackBar();
             this.label = new System.Windows.Forms.Label();
             this.Timer = new System.Windows.Forms.Timer(this.components);
-            this.BreathButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pBox)).BeginInit();
             this.panel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.breathSize)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.breathSpeed)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.changeFigureSize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.FigureSpeedMovement)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.changeTrajecSizeTBar)).BeginInit();
@@ -62,6 +68,10 @@ namespace Laba_1_3
             // 
             // panel
             // 
+            this.panel.Controls.Add(this.label6);
+            this.panel.Controls.Add(this.breathSize);
+            this.panel.Controls.Add(this.label5);
+            this.panel.Controls.Add(this.breathSpeed);
             this.panel.Controls.Add(this.BreathButton);
             this.panel.Controls.Add(this.label4);
             this.panel.Controls.Add(this.changeFigureSize);
@@ -74,8 +84,58 @@ namespace Laba_1_3
             this.panel.Controls.Add(this.label);
             this.panel.Location = new System.Drawing.Point(560, 9);
             this.panel.Name = "panel";
-            this.panel.Size = new System.Drawing.Size(234, 428);
+            this.panel.Size = new System.Drawing.Size(457, 428);
             this.panel.TabIndex = 1;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(254, 336);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(107, 15);
+            this.label6.TabIndex = 13;
+            this.label6.Text = "Change breath size";
+            // 
+            // breathSize
+            // 
+            this.breathSize.Location = new System.Drawing.Point(222, 354);
+            this.breathSize.Maximum = 50;
+            this.breathSize.Minimum = 15;
+            this.breathSize.Name = "breathSize";
+            this.breathSize.Size = new System.Drawing.Size(173, 45);
+            this.breathSize.TabIndex = 12;
+            this.breathSize.Value = 15;
+            this.breathSize.Scroll += new System.EventHandler(this.ChangeBreathSize);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(41, 336);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(119, 15);
+            this.label5.TabIndex = 11;
+            this.label5.Text = "Change breath speed";
+            // 
+            // breathSpeed
+            // 
+            this.breathSpeed.Location = new System.Drawing.Point(23, 354);
+            this.breathSpeed.Maximum = 5;
+            this.breathSpeed.Minimum = 1;
+            this.breathSpeed.Name = "breathSpeed";
+            this.breathSpeed.Size = new System.Drawing.Size(158, 45);
+            this.breathSpeed.TabIndex = 10;
+            this.breathSpeed.Value = 1;
+            this.breathSpeed.Scroll += new System.EventHandler(this.ChangeBreathSpeed);
+            // 
+            // BreathButton
+            // 
+            this.BreathButton.Location = new System.Drawing.Point(22, 302);
+            this.BreathButton.Name = "BreathButton";
+            this.BreathButton.Size = new System.Drawing.Size(159, 23);
+            this.BreathButton.TabIndex = 9;
+            this.BreathButton.Text = "Start/Stop breath";
+            this.BreathButton.UseVisualStyleBackColor = true;
+            this.BreathButton.Click += new System.EventHandler(this.BreathButton_Click);
             // 
             // label4
             // 
@@ -169,21 +229,11 @@ namespace Laba_1_3
             this.Timer.Interval = 50;
             this.Timer.Tick += new System.EventHandler(this.TimerTick);
             // 
-            // BreathButton
-            // 
-            this.BreathButton.Location = new System.Drawing.Point(22, 302);
-            this.BreathButton.Name = "BreathButton";
-            this.BreathButton.Size = new System.Drawing.Size(159, 23);
-            this.BreathButton.TabIndex = 9;
-            this.BreathButton.Text = "Start/Stop breath";
-            this.BreathButton.UseVisualStyleBackColor = true;
-            this.BreathButton.Click += new System.EventHandler(this.BreathButton_Click);
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1029, 450);
             this.Controls.Add(this.panel);
             this.Controls.Add(this.pBox);
             this.Name = "MainForm";
@@ -192,6 +242,8 @@ namespace Laba_1_3
             ((System.ComponentModel.ISupportInitialize)(this.pBox)).EndInit();
             this.panel.ResumeLayout(false);
             this.panel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.breathSize)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.breathSpeed)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.changeFigureSize)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.FigureSpeedMovement)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.changeTrajecSizeTBar)).EndInit();
@@ -214,6 +266,10 @@ namespace Laba_1_3
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TrackBar changeFigureSize;
         private System.Windows.Forms.Button BreathButton;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TrackBar breathSize;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TrackBar breathSpeed;
     }
 }
 
