@@ -32,6 +32,8 @@ namespace Laba_1_3
             this.components = new System.ComponentModel.Container();
             this.pBox = new System.Windows.Forms.PictureBox();
             this.panel = new System.Windows.Forms.Panel();
+            this.objColor = new System.Windows.Forms.Button();
+            this.trajecColor = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.breathSize = new System.Windows.Forms.TrackBar();
             this.label5 = new System.Windows.Forms.Label();
@@ -47,6 +49,8 @@ namespace Laba_1_3
             this.changeTrajecSizeTBar = new System.Windows.Forms.TrackBar();
             this.label = new System.Windows.Forms.Label();
             this.Timer = new System.Windows.Forms.Timer(this.components);
+            this.chooseColor = new System.Windows.Forms.ColorDialog();
+            this.backGroundColor = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pBox)).BeginInit();
             this.panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.breathSize)).BeginInit();
@@ -63,11 +67,14 @@ namespace Laba_1_3
             this.pBox.Size = new System.Drawing.Size(538, 435);
             this.pBox.TabIndex = 0;
             this.pBox.TabStop = false;
+            this.pBox.BackColorChanged += new System.EventHandler(this.pBox_BackColorChanged);
             this.pBox.Paint += new System.Windows.Forms.PaintEventHandler(this.pBoxPaint);
-            this.pBox.Resize += new System.EventHandler(this.pBoxResize);
             // 
             // panel
             // 
+            this.panel.Controls.Add(this.backGroundColor);
+            this.panel.Controls.Add(this.objColor);
+            this.panel.Controls.Add(this.trajecColor);
             this.panel.Controls.Add(this.label6);
             this.panel.Controls.Add(this.breathSize);
             this.panel.Controls.Add(this.label5);
@@ -86,6 +93,26 @@ namespace Laba_1_3
             this.panel.Name = "panel";
             this.panel.Size = new System.Drawing.Size(457, 428);
             this.panel.TabIndex = 1;
+            // 
+            // objColor
+            // 
+            this.objColor.Location = new System.Drawing.Point(254, 118);
+            this.objColor.Name = "objColor";
+            this.objColor.Size = new System.Drawing.Size(116, 41);
+            this.objColor.TabIndex = 15;
+            this.objColor.Text = "Change object color";
+            this.objColor.UseVisualStyleBackColor = true;
+            this.objColor.Click += new System.EventHandler(this.objColor_Click);
+            // 
+            // trajecColor
+            // 
+            this.trajecColor.Location = new System.Drawing.Point(254, 52);
+            this.trajecColor.Name = "trajecColor";
+            this.trajecColor.Size = new System.Drawing.Size(116, 45);
+            this.trajecColor.TabIndex = 14;
+            this.trajecColor.Text = "Change trajectory color";
+            this.trajecColor.UseVisualStyleBackColor = true;
+            this.trajecColor.Click += new System.EventHandler(this.trajecColor_Click);
             // 
             // label6
             // 
@@ -229,6 +256,20 @@ namespace Laba_1_3
             this.Timer.Interval = 50;
             this.Timer.Tick += new System.EventHandler(this.TimerTick);
             // 
+            // chooseColor
+            // 
+            this.chooseColor.FullOpen = true;
+            // 
+            // backGroundColor
+            // 
+            this.backGroundColor.Location = new System.Drawing.Point(254, 185);
+            this.backGroundColor.Name = "backGroundColor";
+            this.backGroundColor.Size = new System.Drawing.Size(116, 43);
+            this.backGroundColor.TabIndex = 16;
+            this.backGroundColor.Text = "Change Background Color";
+            this.backGroundColor.UseVisualStyleBackColor = true;
+            this.backGroundColor.Click += new System.EventHandler(this.backGroundColor_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -270,6 +311,10 @@ namespace Laba_1_3
         private System.Windows.Forms.TrackBar breathSize;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TrackBar breathSpeed;
+        private System.Windows.Forms.Button trajecColor;
+        private System.Windows.Forms.ColorDialog chooseColor;
+        private System.Windows.Forms.Button objColor;
+        private System.Windows.Forms.Button backGroundColor;
     }
 }
 

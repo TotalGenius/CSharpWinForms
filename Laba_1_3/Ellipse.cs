@@ -13,11 +13,12 @@ namespace Laba_1_3
 
         public override void Draw(PictureBox pb)
         {
+            
             //Вынести в отдельный метод
             XStart = pb.Width / 2;
             YStart = pb.Height / 2;
             TrajecGraphic = pb.CreateGraphics();
-            TrajecPen = new Pen(Color.Black, 3f);
+            TrajecPen = new Pen(TrajColor, 3f);
             Injection = 0;
             //Вот эту часть 
 

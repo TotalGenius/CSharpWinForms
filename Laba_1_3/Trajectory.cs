@@ -26,6 +26,18 @@ namespace Laba_1_3
 
         public Pen TrajecPen { get; set; }
 
+        /*
+         * Свойства и переменные для изменения 
+         * Цвета траектории
+         */
+        private Color trajColor = Color.Black;
+        public Color TrajColor
+        {
+            get { return trajColor; }
+            set { trajColor = value; }
+        }
+        //
+
         public abstract void Draw(PictureBox pb);
     }
 }

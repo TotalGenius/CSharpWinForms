@@ -50,7 +50,7 @@ namespace Laba_1_3
                 figureParts[10] = new Point(XPoint + (10 + FigureSize + counter), YPoint - (30 + FigureSize + counter));
                 figureParts[11] = new Point(XPoint - (10 + FigureSize + counter), YPoint - (30 + FigureSize + counter));
 
-                Trajectory.TrajecGraphic.DrawPolygon(Trajectory.TrajecPen, figureParts);
+                pb.CreateGraphics().DrawPolygon(new Pen(ObjColor, 3f), figureParts);
                 counter+=BreathSpeed;
                 
             } 
@@ -83,7 +83,7 @@ namespace Laba_1_3
                 figureParts[10] = new Point(XPoint + (10 + BreathOutStep), YPoint - (30 + BreathOutStep));
                 figureParts[11] = new Point(XPoint - (10 + BreathOutStep), YPoint - (30 + BreathOutStep));
 
-                Trajectory.TrajecGraphic.DrawPolygon(Trajectory.TrajecPen, figureParts);
+                pb.CreateGraphics().DrawPolygon(new Pen(ObjColor, 3f), figureParts);
 
                 counter -=BreathSpeed;
                 
@@ -111,7 +111,7 @@ namespace Laba_1_3
             figureParts[10] = new Point(XPoint + (10 + FigureSize), YPoint - (30 + FigureSize));
             figureParts[11] = new Point(XPoint - (10 + FigureSize), YPoint - (30 + FigureSize));
 
-            Trajectory.TrajecGraphic.DrawPolygon(Trajectory.TrajecPen, figureParts);
+            pb.CreateGraphics().DrawPolygon(new Pen(ObjColor, 3f), figureParts);
         }
 
         public override void Move(PictureBox pb)

@@ -17,7 +17,7 @@ namespace Laba_1_3
         public override void Move(PictureBox pb)
         {
             MoveCentralPoint(pb);
-            Trajectory.TrajecGraphic.FillEllipse(Brushes.Red, XPoint, YPoint, 10, 10);
+            pb.CreateGraphics().FillEllipse(Brushes.Red, XPoint, YPoint, 10, 10);
         }
     }
 }

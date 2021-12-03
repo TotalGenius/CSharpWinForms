@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -31,6 +32,15 @@ namespace Laba_1_3
             set { centralPointMovaingSpeed = value; }
         }
         private bool isEndOfRoad = false;
+        //
+
+        //Свойства цвета для объекта
+        private Color objColor = Color.Black;
+        public Color ObjColor
+        {
+            get { return objColor; }
+            set { objColor = value; }
+        }
         //
 
 

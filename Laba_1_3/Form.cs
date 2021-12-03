@@ -15,8 +15,7 @@ namespace Laba_1_3
         public MainForm()
         {
             InitializeComponent();
-            trajectory = new Ellipse();
-             new FigureVar_5(trajectory);
+            
         }
 
         
@@ -115,6 +114,32 @@ namespace Laba_1_3
            
             
 
+        }
+
+        private void pBox_BackColorChanged(object sender, EventArgs e)
+        {
+            trajectory.Draw(pBox);
+        }
+
+        private void trajecColor_Click(object sender, EventArgs e)
+        {
+            chooseColor.ShowDialog();
+            trajectory.TrajColor = chooseColor.Color;
+            Refresh();
+            trajectory.Draw(pBox);
+        }
+
+        private void objColor_Click(object sender, EventArgs e)
+        {
+            chooseColor.ShowDialog();
+            movingObj.ObjColor = chooseColor.Color;
+        }
+
+        private void backGroundColor_Click(object sender, EventArgs e)
+        {
+            chooseColor.ShowDialog();
+            pBox.BackColor = chooseColor.Color;
+            trajectory.Draw(pBox);
         }
     }
 }
