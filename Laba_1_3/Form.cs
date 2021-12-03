@@ -15,6 +15,8 @@ namespace Laba_1_3
         public MainForm()
         {
             InitializeComponent();
+            trajectory = new Ellipse();
+             new FigureVar_5(trajectory);
         }
 
         
