@@ -139,6 +139,7 @@ namespace Laba_1_3
         {
             chooseColor.ShowDialog();
             pBox.BackColor = chooseColor.Color;
+            Refresh();
             trajectory.Draw(pBox);
         }
     }

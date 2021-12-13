@@ -8,7 +8,22 @@ namespace Laba_1_3
 {
     abstract class Trajectory
     {
-        public double Injection { get; set; }
+        //Зададим переменные и свойства для начального и конечного угла
+        private double injectionStart = 0;
+        public double InjectionStart
+        {
+            get { return injectionStart; }
+            set { injectionStart = value; }
+        }
+        private double injectionEnd = Math.PI;
+        public double InjectionEnd 
+        {
+            get { return injectionEnd; }
+            set { injectionEnd = value; } 
+        }
+
+        public double InjectionNext { get; set; }
+        //
         public double X { get; set; }
         public double Y { get; set; }
         public double XStart { get; set; }
@@ -38,6 +53,22 @@ namespace Laba_1_3
         }
         //
 
+        /*
+         * Действия в методе Prepare одинаковы для каждой траектории
+         * Поэтому описываем их в отдельном методе абстрактного класса,
+         * который будет доступен только в классах наследниках
+         */
+        protected void Prepare(PictureBox pb)
+        {
+            XStart = pb.Width / 2;
+            YStart = pb.Height / 2;
+            TrajecGraphic = pb.CreateGraphics();
+            TrajecPen = new Pen(TrajColor, 3f);
+           
+            Step = InjectionEnd / TrajecPoints.Length;
+            
+            InjectionNext = InjectionStart;
+        }
         public abstract void Draw(PictureBox pb);
     }
 }
