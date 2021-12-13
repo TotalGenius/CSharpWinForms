@@ -25,11 +25,11 @@ namespace Laba_1_3
         public int XPoint { get; set; }
         public int YPoint { get; set; }
         private int i = 0;
-        private int centralPointMovaingSpeed = 1;
+        private int centralPointMovingSpeed = 1;
         public int CentralPointMovingSpeed
         {
-            get { return centralPointMovaingSpeed; }
-            set { centralPointMovaingSpeed = value; }
+            get { return centralPointMovingSpeed; }
+            set { centralPointMovingSpeed = value; }
         }
         private bool isEndOfRoad = false;
         //
@@ -64,17 +64,17 @@ namespace Laba_1_3
                      * При добавлении возможности изменения скорости движения
                      * добавили доп. проверку во избежания исключения ArrayOutOfBound
                      */
-                    if (i < 0)
-                        i = 0;
+                    if (i < (int)Trajectory.InjectionStart)
+                        i = (int)Trajectory.InjectionStart;
                     //
                     XPoint = Trajectory.TrajecPoints[i].X;
                     YPoint = Trajectory.TrajecPoints[i].Y;
-                    i=i+centralPointMovaingSpeed;
+                    i=i+centralPointMovingSpeed;
                 }
             }
             else
             {
-                if (i == 0 || i<0)
+                if (i == Trajectory.InjectionStart || i< Trajectory.InjectionStart)
                 {
                     isEndOfRoad = true;
                 }
@@ -90,7 +90,7 @@ namespace Laba_1_3
 
                     XPoint = Trajectory.TrajecPoints[i].X;
                     YPoint = Trajectory.TrajecPoints[i].Y;
-                    i=i-centralPointMovaingSpeed;
+                    i=i-centralPointMovingSpeed;
                 }
             }            
         }
