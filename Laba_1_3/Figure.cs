@@ -23,7 +23,9 @@ namespace Laba_1_3
         protected bool breathIn=true;
         protected bool breathOut = false;
         protected int BreathOutStep;
-        
+        protected Point[] figureParts;
+
+
         public int FigureSize { get; set; }
 
         public bool IsBreath { get; set; }

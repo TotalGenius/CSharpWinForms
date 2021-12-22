@@ -18,9 +18,9 @@ namespace Laba_1_3
             
         }
 
-        
-        static Trajectory trajectory = new Ellipse();
-        MovingObject movingObj = new FigureVar_5(trajectory);
+
+        static Trajectory trajectory = new Hypocycloid();
+        MovingObject movingObj = new FigureVar_16(trajectory);
     
 
         private void pBoxPaint(object sender, PaintEventArgs e)
