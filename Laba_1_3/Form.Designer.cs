@@ -32,6 +32,8 @@ namespace Laba_1_3
             this.components = new System.ComponentModel.Container();
             this.pBox = new System.Windows.Forms.PictureBox();
             this.panel = new System.Windows.Forms.Panel();
+            this.labelTrajName = new System.Windows.Forms.Label();
+            this.backGroundColor = new System.Windows.Forms.Button();
             this.objColor = new System.Windows.Forms.Button();
             this.trajecColor = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
@@ -50,7 +52,7 @@ namespace Laba_1_3
             this.label = new System.Windows.Forms.Label();
             this.Timer = new System.Windows.Forms.Timer(this.components);
             this.chooseColor = new System.Windows.Forms.ColorDialog();
-            this.backGroundColor = new System.Windows.Forms.Button();
+            this.labelFigureName = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pBox)).BeginInit();
             this.panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.breathSize)).BeginInit();
@@ -72,6 +74,8 @@ namespace Laba_1_3
             // 
             // panel
             // 
+            this.panel.Controls.Add(this.labelFigureName);
+            this.panel.Controls.Add(this.labelTrajName);
             this.panel.Controls.Add(this.backGroundColor);
             this.panel.Controls.Add(this.objColor);
             this.panel.Controls.Add(this.trajecColor);
@@ -94,9 +98,28 @@ namespace Laba_1_3
             this.panel.Size = new System.Drawing.Size(457, 428);
             this.panel.TabIndex = 1;
             // 
+            // labelTrajName
+            // 
+            this.labelTrajName.AutoSize = true;
+            this.labelTrajName.Location = new System.Drawing.Point(188, 10);
+            this.labelTrajName.Name = "labelTrajName";
+            this.labelTrajName.Size = new System.Drawing.Size(58, 15);
+            this.labelTrajName.TabIndex = 17;
+            this.labelTrajName.Text = "Trajectory";
+            // 
+            // backGroundColor
+            // 
+            this.backGroundColor.Location = new System.Drawing.Point(130, 90);
+            this.backGroundColor.Name = "backGroundColor";
+            this.backGroundColor.Size = new System.Drawing.Size(116, 43);
+            this.backGroundColor.TabIndex = 16;
+            this.backGroundColor.Text = "Change Background Color";
+            this.backGroundColor.UseVisualStyleBackColor = true;
+            this.backGroundColor.Click += new System.EventHandler(this.backGroundColor_Click);
+            // 
             // objColor
             // 
-            this.objColor.Location = new System.Drawing.Point(254, 118);
+            this.objColor.Location = new System.Drawing.Point(3, 272);
             this.objColor.Name = "objColor";
             this.objColor.Size = new System.Drawing.Size(116, 41);
             this.objColor.TabIndex = 15;
@@ -106,7 +129,7 @@ namespace Laba_1_3
             // 
             // trajecColor
             // 
-            this.trajecColor.Location = new System.Drawing.Point(254, 52);
+            this.trajecColor.Location = new System.Drawing.Point(3, 90);
             this.trajecColor.Name = "trajecColor";
             this.trajecColor.Size = new System.Drawing.Size(116, 45);
             this.trajecColor.TabIndex = 14;
@@ -117,7 +140,7 @@ namespace Laba_1_3
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(254, 336);
+            this.label6.Location = new System.Drawing.Point(309, 285);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(107, 15);
             this.label6.TabIndex = 13;
@@ -125,7 +148,7 @@ namespace Laba_1_3
             // 
             // breathSize
             // 
-            this.breathSize.Location = new System.Drawing.Point(222, 354);
+            this.breathSize.Location = new System.Drawing.Point(279, 303);
             this.breathSize.Maximum = 50;
             this.breathSize.Minimum = 15;
             this.breathSize.Name = "breathSize";
@@ -137,7 +160,7 @@ namespace Laba_1_3
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(41, 336);
+            this.label5.Location = new System.Drawing.Point(297, 351);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(119, 15);
             this.label5.TabIndex = 11;
@@ -145,7 +168,7 @@ namespace Laba_1_3
             // 
             // breathSpeed
             // 
-            this.breathSpeed.Location = new System.Drawing.Point(23, 354);
+            this.breathSpeed.Location = new System.Drawing.Point(294, 380);
             this.breathSpeed.Maximum = 5;
             this.breathSpeed.Minimum = 1;
             this.breathSpeed.Name = "breathSpeed";
@@ -156,9 +179,9 @@ namespace Laba_1_3
             // 
             // BreathButton
             // 
-            this.BreathButton.Location = new System.Drawing.Point(22, 302);
+            this.BreathButton.Location = new System.Drawing.Point(3, 233);
             this.BreathButton.Name = "BreathButton";
-            this.BreathButton.Size = new System.Drawing.Size(159, 23);
+            this.BreathButton.Size = new System.Drawing.Size(157, 23);
             this.BreathButton.TabIndex = 9;
             this.BreathButton.Text = "Start/Stop breath";
             this.BreathButton.UseVisualStyleBackColor = true;
@@ -167,7 +190,7 @@ namespace Laba_1_3
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(59, 232);
+            this.label4.Location = new System.Drawing.Point(292, 176);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(101, 15);
             this.label4.TabIndex = 8;
@@ -175,7 +198,7 @@ namespace Laba_1_3
             // 
             // changeFigureSize
             // 
-            this.changeFigureSize.Location = new System.Drawing.Point(3, 250);
+            this.changeFigureSize.Location = new System.Drawing.Point(229, 194);
             this.changeFigureSize.Maximum = 50;
             this.changeFigureSize.Name = "changeFigureSize";
             this.changeFigureSize.Size = new System.Drawing.Size(225, 45);
@@ -184,7 +207,7 @@ namespace Laba_1_3
             // 
             // FigureSpeedMovement
             // 
-            this.FigureSpeedMovement.Location = new System.Drawing.Point(39, 174);
+            this.FigureSpeedMovement.Location = new System.Drawing.Point(292, 255);
             this.FigureSpeedMovement.Maximum = 5;
             this.FigureSpeedMovement.Minimum = 1;
             this.FigureSpeedMovement.Name = "FigureSpeedMovement";
@@ -196,7 +219,7 @@ namespace Laba_1_3
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(53, 155);
+            this.label3.Location = new System.Drawing.Point(309, 237);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(107, 15);
             this.label3.TabIndex = 5;
@@ -204,7 +227,7 @@ namespace Laba_1_3
             // 
             // PointMoveStop
             // 
-            this.PointMoveStop.Location = new System.Drawing.Point(121, 118);
+            this.PointMoveStop.Location = new System.Drawing.Point(84, 194);
             this.PointMoveStop.Name = "PointMoveStop";
             this.PointMoveStop.Size = new System.Drawing.Size(75, 23);
             this.PointMoveStop.TabIndex = 4;
@@ -214,7 +237,7 @@ namespace Laba_1_3
             // 
             // MoveStart
             // 
-            this.MoveStart.Location = new System.Drawing.Point(23, 118);
+            this.MoveStart.Location = new System.Drawing.Point(3, 194);
             this.MoveStart.Name = "MoveStart";
             this.MoveStart.Size = new System.Drawing.Size(75, 23);
             this.MoveStart.TabIndex = 3;
@@ -225,11 +248,11 @@ namespace Laba_1_3
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(77, 100);
+            this.label2.Location = new System.Drawing.Point(59, 176);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(68, 15);
+            this.label2.Size = new System.Drawing.Size(37, 15);
             this.label2.TabIndex = 2;
-            this.label2.Text = "Point move";
+            this.label2.Text = "Move";
             // 
             // changeTrajecSizeTBar
             // 
@@ -245,7 +268,7 @@ namespace Laba_1_3
             // label
             // 
             this.label.AutoSize = true;
-            this.label.Location = new System.Drawing.Point(53, 34);
+            this.label.Location = new System.Drawing.Point(3, 34);
             this.label.Name = "label";
             this.label.Size = new System.Drawing.Size(117, 15);
             this.label.TabIndex = 0;
@@ -260,15 +283,14 @@ namespace Laba_1_3
             // 
             this.chooseColor.FullOpen = true;
             // 
-            // backGroundColor
+            // labelFigureName
             // 
-            this.backGroundColor.Location = new System.Drawing.Point(254, 185);
-            this.backGroundColor.Name = "backGroundColor";
-            this.backGroundColor.Size = new System.Drawing.Size(116, 43);
-            this.backGroundColor.TabIndex = 16;
-            this.backGroundColor.Text = "Change Background Color";
-            this.backGroundColor.UseVisualStyleBackColor = true;
-            this.backGroundColor.Click += new System.EventHandler(this.backGroundColor_Click);
+            this.labelFigureName.AutoSize = true;
+            this.labelFigureName.Location = new System.Drawing.Point(206, 156);
+            this.labelFigureName.Name = "labelFigureName";
+            this.labelFigureName.Size = new System.Drawing.Size(40, 15);
+            this.labelFigureName.TabIndex = 18;
+            this.labelFigureName.Text = "Figure";
             // 
             // MainForm
             // 
@@ -315,6 +337,8 @@ namespace Laba_1_3
         private System.Windows.Forms.ColorDialog chooseColor;
         private System.Windows.Forms.Button objColor;
         private System.Windows.Forms.Button backGroundColor;
+        private System.Windows.Forms.Label labelTrajName;
+        private System.Windows.Forms.Label labelFigureName;
     }
 }
 
