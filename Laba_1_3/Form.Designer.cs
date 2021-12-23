@@ -32,6 +32,9 @@ namespace Laba_1_3
             this.components = new System.ComponentModel.Container();
             this.pBox = new System.Windows.Forms.PictureBox();
             this.panel = new System.Windows.Forms.Panel();
+            this.buttonChooseAnotherFigure = new System.Windows.Forms.Button();
+            this.buttonChooseAnotherTrajec = new System.Windows.Forms.Button();
+            this.labelFigureName = new System.Windows.Forms.Label();
             this.labelTrajName = new System.Windows.Forms.Label();
             this.backGroundColor = new System.Windows.Forms.Button();
             this.objColor = new System.Windows.Forms.Button();
@@ -52,7 +55,7 @@ namespace Laba_1_3
             this.label = new System.Windows.Forms.Label();
             this.Timer = new System.Windows.Forms.Timer(this.components);
             this.chooseColor = new System.Windows.Forms.ColorDialog();
-            this.labelFigureName = new System.Windows.Forms.Label();
+            this.buttonAdditionalSettings = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pBox)).BeginInit();
             this.panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.breathSize)).BeginInit();
@@ -74,6 +77,9 @@ namespace Laba_1_3
             // 
             // panel
             // 
+            this.panel.Controls.Add(this.buttonAdditionalSettings);
+            this.panel.Controls.Add(this.buttonChooseAnotherFigure);
+            this.panel.Controls.Add(this.buttonChooseAnotherTrajec);
             this.panel.Controls.Add(this.labelFigureName);
             this.panel.Controls.Add(this.labelTrajName);
             this.panel.Controls.Add(this.backGroundColor);
@@ -97,6 +103,35 @@ namespace Laba_1_3
             this.panel.Name = "panel";
             this.panel.Size = new System.Drawing.Size(457, 428);
             this.panel.TabIndex = 1;
+            // 
+            // buttonChooseAnotherFigure
+            // 
+            this.buttonChooseAnotherFigure.Location = new System.Drawing.Point(3, 325);
+            this.buttonChooseAnotherFigure.Name = "buttonChooseAnotherFigure";
+            this.buttonChooseAnotherFigure.Size = new System.Drawing.Size(104, 41);
+            this.buttonChooseAnotherFigure.TabIndex = 20;
+            this.buttonChooseAnotherFigure.Text = "Choose another figure";
+            this.buttonChooseAnotherFigure.UseVisualStyleBackColor = true;
+            this.buttonChooseAnotherFigure.Click += new System.EventHandler(this.buttonChooseAnotherFigure_Click);
+            // 
+            // buttonChooseAnotherTrajec
+            // 
+            this.buttonChooseAnotherTrajec.Location = new System.Drawing.Point(253, 90);
+            this.buttonChooseAnotherTrajec.Name = "buttonChooseAnotherTrajec";
+            this.buttonChooseAnotherTrajec.Size = new System.Drawing.Size(105, 43);
+            this.buttonChooseAnotherTrajec.TabIndex = 19;
+            this.buttonChooseAnotherTrajec.Text = "Choose another trajectory";
+            this.buttonChooseAnotherTrajec.UseVisualStyleBackColor = true;
+            this.buttonChooseAnotherTrajec.Click += new System.EventHandler(this.buttonChooseAnotherTrajec_Click);
+            // 
+            // labelFigureName
+            // 
+            this.labelFigureName.AutoSize = true;
+            this.labelFigureName.Location = new System.Drawing.Point(206, 156);
+            this.labelFigureName.Name = "labelFigureName";
+            this.labelFigureName.Size = new System.Drawing.Size(40, 15);
+            this.labelFigureName.TabIndex = 18;
+            this.labelFigureName.Text = "Figure";
             // 
             // labelTrajName
             // 
@@ -283,14 +318,14 @@ namespace Laba_1_3
             // 
             this.chooseColor.FullOpen = true;
             // 
-            // labelFigureName
+            // buttonAdditionalSettings
             // 
-            this.labelFigureName.AutoSize = true;
-            this.labelFigureName.Location = new System.Drawing.Point(206, 156);
-            this.labelFigureName.Name = "labelFigureName";
-            this.labelFigureName.Size = new System.Drawing.Size(40, 15);
-            this.labelFigureName.TabIndex = 18;
-            this.labelFigureName.Text = "Figure";
+            this.buttonAdditionalSettings.Location = new System.Drawing.Point(365, 90);
+            this.buttonAdditionalSettings.Name = "buttonAdditionalSettings";
+            this.buttonAdditionalSettings.Size = new System.Drawing.Size(75, 43);
+            this.buttonAdditionalSettings.TabIndex = 21;
+            this.buttonAdditionalSettings.Text = "Additional Settings";
+            this.buttonAdditionalSettings.UseVisualStyleBackColor = true;
             // 
             // MainForm
             // 
@@ -339,6 +374,9 @@ namespace Laba_1_3
         private System.Windows.Forms.Button backGroundColor;
         private System.Windows.Forms.Label labelTrajName;
         private System.Windows.Forms.Label labelFigureName;
+        private System.Windows.Forms.Button buttonChooseAnotherTrajec;
+        private System.Windows.Forms.Button buttonChooseAnotherFigure;
+        private System.Windows.Forms.Button buttonAdditionalSettings;
     }
 }
 

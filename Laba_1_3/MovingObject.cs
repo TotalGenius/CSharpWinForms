@@ -14,12 +14,18 @@ namespace Laba_1_3
          * В конструктор передается траетория с которой предстоит работать,
          * т.е. траетория по которой должен двигаться объект
          */
-        public MovingObject(Trajectory trajectory) 
+        public MovingObject(Trajectory tr) 
         {
-            Trajectory = trajectory;
+            trajectory = tr;
         }
 
-        public Trajectory Trajectory { get; set; }
+        private Trajectory trajectory;
+
+        public Trajectory Trajectory 
+        {
+            get {return trajectory; }
+            set { trajectory = value; }
+        }
 
         //Свойства и переменные для движущейся центральной точки
         public int XPoint { get; set; }

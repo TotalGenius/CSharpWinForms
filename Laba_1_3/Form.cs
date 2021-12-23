@@ -19,7 +19,7 @@ namespace Laba_1_3
         }
 
 
-        static Trajectory trajectory = new Hypocycloid();
+        static Trajectory trajectory = new Ellipse();
         MovingObject movingObj = new FigureVar_16(trajectory);
     
 
@@ -141,6 +141,37 @@ namespace Laba_1_3
             pBox.BackColor = chooseColor.Color;
             Refresh();
             trajectory.Draw(pBox);
+        }
+
+        private void buttonChooseAnotherTrajec_Click(object sender, EventArgs e)
+        {
+            ChooseAnotherTrajectoryForm form = new ChooseAnotherTrajectoryForm();
+            form.ShowDialog();
+
+            //Переписать потом нормально
+            trajectory = СhangedObject.CurrentTrajectory;
+            СhangedObject.CurrentTrajectory = null;
+            movingObj.Trajectory = trajectory;
+            Refresh();
+                
+                trajectory.Draw(pBox);
+            
+
+
+        }
+
+        private void buttonChooseAnotherFigure_Click(object sender, EventArgs e)
+        {
+            ChooseAnotherFigureForm figureForm = new ChooseAnotherFigureForm();
+            figureForm.ShowDialog();
+            
+            Refresh();
+            //Переписать этот фрагмент и класс MovingObject
+            movingObj = СhangedObject.CurrentFigure;
+            movingObj.Trajectory = trajectory;// Вот без этой хрени вылетает исключение в методе Move класса MovingObject. А не должно
+
+
+
         }
     }
 }
