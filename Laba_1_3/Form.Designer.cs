@@ -326,6 +326,7 @@ namespace Laba_1_3
             this.buttonAdditionalSettings.TabIndex = 21;
             this.buttonAdditionalSettings.Text = "Additional Settings";
             this.buttonAdditionalSettings.UseVisualStyleBackColor = true;
+            this.buttonAdditionalSettings.Click += new System.EventHandler(this.buttonAdditionalSettings_Click);
             // 
             // MainForm
             // 

@@ -173,5 +173,13 @@ namespace Laba_1_3
 
 
         }
+
+        private void buttonAdditionalSettings_Click(object sender, EventArgs e)
+        {
+            AdditionalTrajectorySettingsForm additionalTrajectorySettingsForm = new AdditionalTrajectorySettingsForm(trajectory);
+            additionalTrajectorySettingsForm.ShowDialog();
+            Refresh();
+            trajectory.Draw(pBox);
+        }
     }
 }

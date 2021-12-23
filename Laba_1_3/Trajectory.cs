@@ -65,7 +65,7 @@ namespace Laba_1_3
             TrajecGraphic = pb.CreateGraphics();
             TrajecPen = new Pen(TrajColor, 3f);
            
-            Step = InjectionEnd / TrajecPoints.Length;
+            Step = (InjectionEnd-InjectionStart) / TrajecPoints.Length;
             
             InjectionNext = InjectionStart;
         }
