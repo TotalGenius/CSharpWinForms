@@ -97,9 +97,9 @@ namespace Laba_1_3
             this.labelChangeRange.AutoSize = true;
             this.labelChangeRange.Location = new System.Drawing.Point(12, 9);
             this.labelChangeRange.Name = "labelChangeRange";
-            this.labelChangeRange.Size = new System.Drawing.Size(81, 15);
+            this.labelChangeRange.Size = new System.Drawing.Size(192, 15);
             this.labelChangeRange.TabIndex = 0;
-            this.labelChangeRange.Text = "Change range";
+            this.labelChangeRange.Text = "Изменить диапазон отображения";
             // 
             // textBox1
             // 
@@ -118,11 +118,11 @@ namespace Laba_1_3
             // labelDescription
             // 
             this.labelDescription.AutoSize = true;
-            this.labelDescription.Location = new System.Drawing.Point(13, 28);
+            this.labelDescription.Location = new System.Drawing.Point(12, 24);
             this.labelDescription.Name = "labelDescription";
-            this.labelDescription.Size = new System.Drawing.Size(125, 15);
+            this.labelDescription.Size = new System.Drawing.Size(134, 30);
             this.labelDescription.TabIndex = 3;
-            this.labelDescription.Text = "Enabled values (0-360)";
+            this.labelDescription.Text = "Допустимые значения \r\n(0-360)";
             // 
             // labelFrom
             // 
@@ -145,21 +145,20 @@ namespace Laba_1_3
             // labelChangeCoordinates
             // 
             this.labelChangeCoordinates.AutoSize = true;
-            this.labelChangeCoordinates.Location = new System.Drawing.Point(247, 9);
+            this.labelChangeCoordinates.Location = new System.Drawing.Point(213, 9);
             this.labelChangeCoordinates.Name = "labelChangeCoordinates";
-            this.labelChangeCoordinates.Size = new System.Drawing.Size(113, 15);
+            this.labelChangeCoordinates.Size = new System.Drawing.Size(167, 15);
             this.labelChangeCoordinates.TabIndex = 6;
-            this.labelChangeCoordinates.Text = "Change coordinates";
+            this.labelChangeCoordinates.Text = "Поменять координаты точки";
             // 
             // labelChangeCoorDesc
             // 
             this.labelChangeCoorDesc.AutoSize = true;
-            this.labelChangeCoorDesc.Location = new System.Drawing.Point(247, 28);
+            this.labelChangeCoorDesc.Location = new System.Drawing.Point(227, 24);
             this.labelChangeCoorDesc.Name = "labelChangeCoorDesc";
-            this.labelChangeCoorDesc.Size = new System.Drawing.Size(125, 60);
+            this.labelChangeCoorDesc.Size = new System.Drawing.Size(147, 60);
             this.labelChangeCoorDesc.TabIndex = 7;
-            this.labelChangeCoorDesc.Text = "Trajectory consists of \r\n25 points. Chose one \r\nof 25 pointsand select \r\nits coor" +
-    "dinats (x,y)\r\n";
+            this.labelChangeCoorDesc.Text = "Траетория состоит из \r\n25 точек. Выберите одну\r\nи укажите ее координаты\r\n(x,y)\r\n";
             // 
             // textBox3
             // 
@@ -173,18 +172,18 @@ namespace Laba_1_3
             this.labelChoosePoint.AutoSize = true;
             this.labelChoosePoint.Location = new System.Drawing.Point(247, 98);
             this.labelChoosePoint.Name = "labelChoosePoint";
-            this.labelChoosePoint.Size = new System.Drawing.Size(58, 45);
+            this.labelChoosePoint.Size = new System.Drawing.Size(64, 45);
             this.labelChoosePoint.TabIndex = 9;
-            this.labelChoosePoint.Text = "Choose\r\nthe point \r\n(1-25)";
+            this.labelChoosePoint.Text = "Выберите \r\nточку \r\n(1-25)";
             // 
             // labelCoordinats
             // 
             this.labelCoordinats.AutoSize = true;
             this.labelCoordinats.Location = new System.Drawing.Point(247, 160);
             this.labelCoordinats.Name = "labelCoordinats";
-            this.labelCoordinats.Size = new System.Drawing.Size(63, 30);
+            this.labelCoordinats.Size = new System.Drawing.Size(88, 30);
             this.labelCoordinats.TabIndex = 10;
-            this.labelCoordinats.Text = "Enter \r\ncoordinats";
+            this.labelCoordinats.Text = "Введите новые\r\nкоординаты";
             // 
             // textBox4
             // 
@@ -501,7 +500,7 @@ namespace Laba_1_3
 
             //Конец
             if (radioButtonTo_2Pi.Checked)
-                trajectory.InjectionEnd = 0;
+                trajectory.InjectionEnd = Math.PI*2;
             if (radioButtonTo_Pi4.Checked)
                 trajectory.InjectionEnd = Math.PI / 4;
             if (radioButtonTo_Pi2.Checked)

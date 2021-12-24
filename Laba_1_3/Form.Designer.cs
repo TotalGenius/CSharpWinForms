@@ -32,6 +32,7 @@ namespace Laba_1_3
             this.components = new System.ComponentModel.Container();
             this.pBox = new System.Windows.Forms.PictureBox();
             this.panel = new System.Windows.Forms.Panel();
+            this.buttonAdditionalSettings = new System.Windows.Forms.Button();
             this.buttonChooseAnotherFigure = new System.Windows.Forms.Button();
             this.buttonChooseAnotherTrajec = new System.Windows.Forms.Button();
             this.labelFigureName = new System.Windows.Forms.Label();
@@ -55,7 +56,6 @@ namespace Laba_1_3
             this.label = new System.Windows.Forms.Label();
             this.Timer = new System.Windows.Forms.Timer(this.components);
             this.chooseColor = new System.Windows.Forms.ColorDialog();
-            this.buttonAdditionalSettings = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pBox)).BeginInit();
             this.panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.breathSize)).BeginInit();
@@ -104,13 +104,23 @@ namespace Laba_1_3
             this.panel.Size = new System.Drawing.Size(457, 428);
             this.panel.TabIndex = 1;
             // 
+            // buttonAdditionalSettings
+            // 
+            this.buttonAdditionalSettings.Location = new System.Drawing.Point(365, 90);
+            this.buttonAdditionalSettings.Name = "buttonAdditionalSettings";
+            this.buttonAdditionalSettings.Size = new System.Drawing.Size(87, 43);
+            this.buttonAdditionalSettings.TabIndex = 21;
+            this.buttonAdditionalSettings.Text = "Доп. настройки";
+            this.buttonAdditionalSettings.UseVisualStyleBackColor = true;
+            this.buttonAdditionalSettings.Click += new System.EventHandler(this.buttonAdditionalSettings_Click);
+            // 
             // buttonChooseAnotherFigure
             // 
             this.buttonChooseAnotherFigure.Location = new System.Drawing.Point(3, 325);
             this.buttonChooseAnotherFigure.Name = "buttonChooseAnotherFigure";
             this.buttonChooseAnotherFigure.Size = new System.Drawing.Size(104, 41);
             this.buttonChooseAnotherFigure.TabIndex = 20;
-            this.buttonChooseAnotherFigure.Text = "Choose another figure";
+            this.buttonChooseAnotherFigure.Text = "Выбрать другую фигуру";
             this.buttonChooseAnotherFigure.UseVisualStyleBackColor = true;
             this.buttonChooseAnotherFigure.Click += new System.EventHandler(this.buttonChooseAnotherFigure_Click);
             // 
@@ -120,7 +130,7 @@ namespace Laba_1_3
             this.buttonChooseAnotherTrajec.Name = "buttonChooseAnotherTrajec";
             this.buttonChooseAnotherTrajec.Size = new System.Drawing.Size(105, 43);
             this.buttonChooseAnotherTrajec.TabIndex = 19;
-            this.buttonChooseAnotherTrajec.Text = "Choose another trajectory";
+            this.buttonChooseAnotherTrajec.Text = "Выбрать другую траекторию";
             this.buttonChooseAnotherTrajec.UseVisualStyleBackColor = true;
             this.buttonChooseAnotherTrajec.Click += new System.EventHandler(this.buttonChooseAnotherTrajec_Click);
             // 
@@ -129,18 +139,18 @@ namespace Laba_1_3
             this.labelFigureName.AutoSize = true;
             this.labelFigureName.Location = new System.Drawing.Point(206, 156);
             this.labelFigureName.Name = "labelFigureName";
-            this.labelFigureName.Size = new System.Drawing.Size(40, 15);
+            this.labelFigureName.Size = new System.Drawing.Size(47, 15);
             this.labelFigureName.TabIndex = 18;
-            this.labelFigureName.Text = "Figure";
+            this.labelFigureName.Text = "Фигура";
             // 
             // labelTrajName
             // 
             this.labelTrajName.AutoSize = true;
             this.labelTrajName.Location = new System.Drawing.Point(188, 10);
             this.labelTrajName.Name = "labelTrajName";
-            this.labelTrajName.Size = new System.Drawing.Size(58, 15);
+            this.labelTrajName.Size = new System.Drawing.Size(70, 15);
             this.labelTrajName.TabIndex = 17;
-            this.labelTrajName.Text = "Trajectory";
+            this.labelTrajName.Text = "Траектория";
             // 
             // backGroundColor
             // 
@@ -148,7 +158,7 @@ namespace Laba_1_3
             this.backGroundColor.Name = "backGroundColor";
             this.backGroundColor.Size = new System.Drawing.Size(116, 43);
             this.backGroundColor.TabIndex = 16;
-            this.backGroundColor.Text = "Change Background Color";
+            this.backGroundColor.Text = "Изменить цвет фона";
             this.backGroundColor.UseVisualStyleBackColor = true;
             this.backGroundColor.Click += new System.EventHandler(this.backGroundColor_Click);
             // 
@@ -158,7 +168,7 @@ namespace Laba_1_3
             this.objColor.Name = "objColor";
             this.objColor.Size = new System.Drawing.Size(116, 41);
             this.objColor.TabIndex = 15;
-            this.objColor.Text = "Change object color";
+            this.objColor.Text = "Изменить цвет фигуры";
             this.objColor.UseVisualStyleBackColor = true;
             this.objColor.Click += new System.EventHandler(this.objColor_Click);
             // 
@@ -168,7 +178,7 @@ namespace Laba_1_3
             this.trajecColor.Name = "trajecColor";
             this.trajecColor.Size = new System.Drawing.Size(116, 45);
             this.trajecColor.TabIndex = 14;
-            this.trajecColor.Text = "Change trajectory color";
+            this.trajecColor.Text = "Изменить цвет траектории";
             this.trajecColor.UseVisualStyleBackColor = true;
             this.trajecColor.Click += new System.EventHandler(this.trajecColor_Click);
             // 
@@ -177,9 +187,9 @@ namespace Laba_1_3
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(309, 285);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(107, 15);
+            this.label6.Size = new System.Drawing.Size(97, 15);
             this.label6.TabIndex = 13;
-            this.label6.Text = "Change breath size";
+            this.label6.Text = "Размер дыхания";
             // 
             // breathSize
             // 
@@ -195,11 +205,11 @@ namespace Laba_1_3
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(297, 351);
+            this.label5.Location = new System.Drawing.Point(309, 351);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(119, 15);
+            this.label5.Size = new System.Drawing.Size(109, 15);
             this.label5.TabIndex = 11;
-            this.label5.Text = "Change breath speed";
+            this.label5.Text = "Скорость дыхания";
             // 
             // breathSpeed
             // 
@@ -218,18 +228,18 @@ namespace Laba_1_3
             this.BreathButton.Name = "BreathButton";
             this.BreathButton.Size = new System.Drawing.Size(157, 23);
             this.BreathButton.TabIndex = 9;
-            this.BreathButton.Text = "Start/Stop breath";
+            this.BreathButton.Text = "Start/Stop дыхание";
             this.BreathButton.UseVisualStyleBackColor = true;
             this.BreathButton.Click += new System.EventHandler(this.BreathButton_Click);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(292, 176);
+            this.label4.Location = new System.Drawing.Point(284, 176);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(101, 15);
+            this.label4.Size = new System.Drawing.Size(150, 15);
             this.label4.TabIndex = 8;
-            this.label4.Text = "ChangeFigureSize";
+            this.label4.Text = "Изменить размер фигуры";
             // 
             // changeFigureSize
             // 
@@ -256,9 +266,9 @@ namespace Laba_1_3
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(309, 237);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(107, 15);
+            this.label3.Size = new System.Drawing.Size(116, 15);
             this.label3.TabIndex = 5;
-            this.label3.Text = "Speed of the figure";
+            this.label3.Text = "Скорость движения";
             // 
             // PointMoveStop
             // 
@@ -283,11 +293,11 @@ namespace Laba_1_3
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(59, 176);
+            this.label2.Location = new System.Drawing.Point(3, 176);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(37, 15);
+            this.label2.Size = new System.Drawing.Size(140, 15);
             this.label2.TabIndex = 2;
-            this.label2.Text = "Move";
+            this.label2.Text = "Активировать движение";
             // 
             // changeTrajecSizeTBar
             // 
@@ -305,9 +315,9 @@ namespace Laba_1_3
             this.label.AutoSize = true;
             this.label.Location = new System.Drawing.Point(3, 34);
             this.label.Name = "label";
-            this.label.Size = new System.Drawing.Size(117, 15);
+            this.label.Size = new System.Drawing.Size(171, 15);
             this.label.TabIndex = 0;
-            this.label.Text = "Change trjectory size";
+            this.label.Text = "Поменять размер траектории";
             // 
             // Timer
             // 
@@ -317,16 +327,6 @@ namespace Laba_1_3
             // chooseColor
             // 
             this.chooseColor.FullOpen = true;
-            // 
-            // buttonAdditionalSettings
-            // 
-            this.buttonAdditionalSettings.Location = new System.Drawing.Point(365, 90);
-            this.buttonAdditionalSettings.Name = "buttonAdditionalSettings";
-            this.buttonAdditionalSettings.Size = new System.Drawing.Size(75, 43);
-            this.buttonAdditionalSettings.TabIndex = 21;
-            this.buttonAdditionalSettings.Text = "Additional Settings";
-            this.buttonAdditionalSettings.UseVisualStyleBackColor = true;
-            this.buttonAdditionalSettings.Click += new System.EventHandler(this.buttonAdditionalSettings_Click);
             // 
             // MainForm
             // 
